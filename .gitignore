@@ -24,3 +24,5 @@ src/**/*.js.map
 ./import-sample-queries.js
 
 src/aot/**/*
+
+src/app/app.component.local.ts
