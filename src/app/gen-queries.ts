@@ -467,14 +467,9 @@ export const SampleQueries: SampleQuery[] = [
     "category": "Planner",
     "method": "GET",
     "humanName": "all Planner tasks for user",
-<<<<<<< HEAD
-    "requestUrl": "https://graph.microsoft.com/v1.0/users/{user-id}/planner/tasks",
-    "docLink": "https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/planneruser_list_tasks"
-=======
     "requestUrl": "https://graph.microsoft.com/v1.0/users/{user-mail}/planner/tasks",
     "docLink": "https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/planneruser_list_tasks",
     "tip": "This query requires a user id.  To find the ID of the user you can run: GET https://graph.microsoft.com/v1.0/users"
->>>>>>> upstream/master
 },
 {
     "category": "Planner",
