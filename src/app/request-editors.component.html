@@ -1,12 +1,17 @@
 <div class="ms-Pivot">
     <ul class="ms-Pivot-links">
-        <li class="ms-Pivot-link is-selected" data-content="headers" [attr.title]="getStr('request header')" tabindex="1">
-            {{getStr('request header')}}
-        </li>
-        <li class="ms-Pivot-link" data-content="body" [attr.title]="getStr('request body')" (click)="initPostBodyEditor()" tabindex="1">
+        <li class="ms-Pivot-link is-selected" data-content="body" [attr.title]="getStr('request body')" tabindex="1">
             {{getStr('request body')}}
         </li>
+        <li class="ms-Pivot-link" data-content="headers" [attr.title]="getStr('request header')" tabindex="1">
+            {{getStr('request header')}}
+        </li>
     </ul>
+    <div class="ms-Pivot-content" data-content="body">
+        <div id="requestBodyContainer">
+            <div id="post-body-editor"></div>
+        </div>
+    </div>
     <div class="ms-Pivot-content" data-content="headers">
         <div id="headers-editor">
             <table>
@@ -27,18 +32,13 @@
 
                     </td>
                     <td class="half-width-col">
-                        <input id="default" class="c-text-field header-value" [(ngModel)]="header.value" [disabled]="header.readonly" type="text" name="default" [ngClass]="{invisible: isLastHeader(header)}">
+                        <input id="default" class="c-text-field header-value" [(ngModel)]="header.value" [disabled]="header.readonly" type="text" name="default" [class.invisible]="isLastHeader(header)">
                     </td>
-                    <td class="remove-header-btn" [ngClass]="{invisible: isLastHeader(header)}" (click)="removeHeader(header)">
+                    <td class="remove-header-btn" [class.invisible]="isLastHeader(header)" (click)="removeHeader(header)">
                         <i class="ms-Icon ms-Icon--Cancel"></i>
                     </td>
                 </tr>
             </table>
-        </div>
-    </div>
-    <div class="ms-Pivot-content" data-content="body">
-        <div id="requestBodyContainer">
-            <div id="post-body-editor"></div>
         </div>
     </div>
 </div>

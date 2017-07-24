@@ -4,10 +4,8 @@
 
 import { Component, AfterViewInit } from '@angular/core';
 import { GraphExplorerComponent } from "./GraphExplorerComponent";
-import { AppComponent } from "./app.component";
 import { PermissionScopes } from "./scopes";
 import { PermissionScope } from "./base";
-import { getScopes } from "./auth";
 
 declare let fabric, mwf;
 
@@ -24,7 +22,7 @@ export class ScopesDialogComponent extends GraphExplorerComponent implements Aft
     }
 
     scopeListIsDirty():boolean {
-      return PermissionScopes.filter((s) => s.enabled != s.enabledTarget).length > 0;
+      return PermissionScopes.filter((s) => s.enabled !== s.enabledTarget).length > 0;
     }
 
     requestingAdminScopes():boolean {
@@ -42,7 +40,7 @@ export class ScopesDialogComponent extends GraphExplorerComponent implements Aft
         prompt: 'select_account'
       };
 
-      (hello('msft_admin_consent').login(loginProperties) as any);
+      hello('msft_admin_consent').login(loginProperties);
 
     }
 
